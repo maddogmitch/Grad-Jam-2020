@@ -8,12 +8,17 @@ public class Player : MonoBehaviour
     public int health;
     public float speed = 10f;
     public float acceleration = 3f;
+    public bool isJumping;
+    public float JumpSpeed = 5f;
 
     //private variables
     private Vector2 input;
     private SpriteRenderer sr;
     private Rigidbody2D rb;
     private Animator anim;
+    private float rayCastLengthCheck = 0.005f;
+    private float width;
+    private float height;
 
     void Awake()
     {
@@ -21,6 +26,9 @@ public class Player : MonoBehaviour
         sr = GetComponent<SpriteRenderer>();
         anim = GetComponent<Animator>();
         rb = GetComponent<Rigidbody2D>();
+        // on awake make the width and hieght equle the collider width and hieght
+        width = GetComponent<Collider2D>().bounds.extents.x;
+        height = GetComponent<Collider2D>().bounds.extents.y;
     }
 
     // Start is called before the first frame update
@@ -36,7 +44,21 @@ public class Player : MonoBehaviour
         input.x = Input.GetAxis("Horizontal");
         input.y = Input.GetAxis("Jump");
 
+        //if statment defult the sprite to face left can change it to be opisite if the art we get defaults to the right
+        if (input.x > 0)
+        {
+            sr.flipX = false;
+        }
+        else if (input.x < 0)
+        {
+            sr.flipX = true;
+        }
 
+
+    }
+
+    public bool canJump()
+    {
 
     }
 
