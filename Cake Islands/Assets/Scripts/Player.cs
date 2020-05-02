@@ -10,6 +10,8 @@ public class Player : MonoBehaviour
     public float acceleration = 3f;
     public bool isJumping;
     public float JumpSpeed = 5f;
+    public float threshold = 0.1f;
+    public float jumptime;
 
     //private variables
     private Vector2 input;
@@ -37,6 +39,21 @@ public class Player : MonoBehaviour
 
     }
 
+    public bool canJump()
+    {
+        //use the ray cast legth to loon at the space belopw the sprite to see if there is ground
+        bool onground = Physics2D.Raycast(new Vector2(transform.position.x, transform.position.y - height), -Vector2.up, rayCastLengthCheck);
+        Debug.DrawRay(new Vector3(transform.position.x, transform.position.y - height, 0), -Vector3.up, Color.red);
+        if (onground)
+        {
+            return true;
+        }
+        else
+        {
+            return false;
+        }
+    }
+
     // Update is called once per frame
     void Update()
     {
@@ -54,10 +71,15 @@ public class Player : MonoBehaviour
             sr.flipX = true;
         }
 
-        //checks the input for the y if that is 0 then we are not jumping
-        if(input.y == 0f)
+        //adds time to jump time and resets the time to 0 and makes jumping false once the inmput y is 0 
+        if(input.y >=1f)
+        {
+            jumptime += Time.deltaTime;
+        }
+        else
         {
             isJumping = false;
+            jumptime = 0;
         }
 
         //checks if you can jump if you can you will be now at a state of jumping if the input y is more then 0 
@@ -69,23 +91,14 @@ public class Player : MonoBehaviour
             }
         }
 
-
-    }
-
-    public bool canJump()
-    {
-        //use the ray cast legth to loon at the space belopw the sprite to see if there is ground
-        bool onground = Physics2D.Raycast(new Vector2( transform.position.x, transform.position.y - height), -Vector2.up, rayCastLengthCheck);
-        Debug.DrawRay(new Vector3(transform.position.x,transform.position.y - height , 0), -Vector3.up, Color.red);
-        if (onground)
+        //if we exceed jump time then we want to stop the player from jumping
+        if (jumptime>threshold)
         {
-            return true;
-        }
-        else
-        {
-            return false;
+            input.y = 0f;
         }
     }
+
+    
 
     void FixedUpdate()
     {
@@ -105,8 +118,8 @@ public class Player : MonoBehaviour
         // used to stop the character from moving when controls are in a nuterl state
         rb.velocity = new Vector2(xVeloc, rb.velocity.y);
 
-
-        if(isJumping)
+        // change velocity to have the x of the cur velocityx and y is the jump speed as long as time does not exceed the threshold time
+        if(isJumping && jumptime < threshold)
         {
             rb.velocity = new Vector2(rb.velocity.x, JumpSpeed);
         }
