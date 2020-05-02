@@ -4,6 +4,9 @@ using UnityEngine;
 
 public class Player : MonoBehaviour
 {
+    public int health;
+    private Vector2 input;
+    
     // Start is called before the first frame update
     void Start()
     {
@@ -13,6 +16,7 @@ public class Player : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+
         
     }
 }
