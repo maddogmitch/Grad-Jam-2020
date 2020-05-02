@@ -55,11 +55,29 @@ public class Player : MonoBehaviour
         }
 
 
+        if (canJump() && isJumping ==false)
+        {
+            if (input.y > 0)
+            {
+                isJumping = true;
+            }
+        }
+
+
     }
 
     public bool canJump()
     {
-
+        //use the ray cast legth to loon at the space belopw the sprite to see if there is ground
+        bool onground = Physics2D.Raycast(new Vector2(transform.position.y - height, transform.position.x), Vector2.down, rayCastLengthCheck);
+        if(onground)
+        {
+            return true;
+        }
+        else
+        {
+            return false;
+        }
     }
 
     void FixedUpdate()
