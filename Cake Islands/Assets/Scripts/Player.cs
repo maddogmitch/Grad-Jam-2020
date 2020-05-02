@@ -5,7 +5,7 @@ using UnityEngine;
 public class Player : MonoBehaviour
 {
     //public variables
-    public int health;
+    public int lives;
     public float speed = 10f;
     public float acceleration = 3f;
     public bool isJumping;
@@ -16,7 +16,7 @@ public class Player : MonoBehaviour
     private SpriteRenderer sr;
     private Rigidbody2D rb;
     private Animator anim;
-    private float rayCastLengthCheck = 0.005f;
+    private float rayCastLengthCheck = 0.5f;
     private float width;
     private float height;
 
@@ -27,8 +27,8 @@ public class Player : MonoBehaviour
         anim = GetComponent<Animator>();
         rb = GetComponent<Rigidbody2D>();
         // on awake make the width and hieght equle the collider width and hieght
-        width = GetComponent<Collider2D>().bounds.extents.x;
-        height = GetComponent<Collider2D>().bounds.extents.y;
+        width = GetComponent<Collider2D>().bounds.extents.x + 0.1f;
+        height = GetComponent<Collider2D>().bounds.extents.y ;
     }
 
     // Start is called before the first frame update
@@ -54,7 +54,13 @@ public class Player : MonoBehaviour
             sr.flipX = true;
         }
 
+        //checks the input for the y if that is 0 then we are not jumping
+        if(input.y == 0f)
+        {
+            isJumping = false;
+        }
 
+        //checks if you can jump if you can you will be now at a state of jumping if the input y is more then 0 
         if (canJump() && isJumping == false)
         {
             if (input.y > 0)
@@ -69,7 +75,8 @@ public class Player : MonoBehaviour
     public bool canJump()
     {
         //use the ray cast legth to loon at the space belopw the sprite to see if there is ground
-        bool onground = Physics2D.Raycast(new Vector2(transform.position.y - height, transform.position.x), Vector2.down, rayCastLengthCheck);
+        bool onground = Physics2D.Raycast(new Vector2( transform.position.x, transform.position.y - height), -Vector2.up, rayCastLengthCheck);
+        Debug.DrawRay(new Vector3(transform.position.x,transform.position.y - height , 0), -Vector3.up, Color.red);
         if (onground)
         {
             return true;
@@ -97,5 +104,12 @@ public class Player : MonoBehaviour
         rb.AddForce(new Vector2(((input.x * speed) - rb.velocity.x) * acceleration, 0));
         // used to stop the character from moving when controls are in a nuterl state
         rb.velocity = new Vector2(xVeloc, rb.velocity.y);
+
+
+        if(isJumping)
+        {
+            rb.velocity = new Vector2(rb.velocity.x, JumpSpeed);
+        }
+
     }
 }

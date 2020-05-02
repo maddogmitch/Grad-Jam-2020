@@ -352,7 +352,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8ecc86f603757db43befe03033ebb487, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  health: 0
+  lives: 0
   speed: 10
   acceleration: 3
   isJumping: 0
@@ -422,7 +422,7 @@ Rigidbody2D:
   m_Interpolate: 0
   m_SleepingMode: 1
   m_CollisionDetection: 0
-  m_Constraints: 0
+  m_Constraints: 4
 --- !u!212 &1231937204
 SpriteRenderer:
   m_ObjectHideFlags: 0
