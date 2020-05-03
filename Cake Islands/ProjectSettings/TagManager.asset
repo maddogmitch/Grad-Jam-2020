@@ -9,6 +9,7 @@ TagManager:
   - GameManager
   - lever
   - spikes
+  - platform
   layers:
   - Default
   - TransparentFX
