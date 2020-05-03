@@ -110,6 +110,12 @@ public class Player : MonoBehaviour
         {
             input.y = 0f;
         }
+
+        //plays jump sound
+        if(isJumping == true)
+        {
+            FindObjectOfType<AudioManager>().Play("Jump");
+        }
     }
 
     private void OnTriggerEnter2D(Collider2D other)
