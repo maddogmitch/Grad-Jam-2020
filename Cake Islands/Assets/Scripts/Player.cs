@@ -31,6 +31,7 @@ public class Player : MonoBehaviour
 
     void Awake()
     {
+        
         // gets required components when the game starts
         sr = GetComponent<SpriteRenderer>();
         anim = GetComponent<Animator>();
@@ -70,7 +71,7 @@ public class Player : MonoBehaviour
         // gets the unity control axes
         input.x = Input.GetAxis("Horizontal");
         input.y = Input.GetAxis("Jump");
-
+        anim.SetFloat("speed", Mathf.Abs(input.x));
         //if statment defult the sprite to face left can change it to be opisite if the art we get defaults to the right
         if (input.x > 0)
         {
@@ -85,11 +86,13 @@ public class Player : MonoBehaviour
         if(input.y >= 1f)
         {
             jumptime += Time.deltaTime;
+           anim.SetBool("isjumping", true);
         }
         else
         {      
-          isJumping = false;
+            isJumping = false;
             jumptime = 0;
+            anim.SetBool("isjumping", false);
         }
 
         //checks if you can jump if you can you will be now at a state of jumping if the input y is more then 0 
@@ -160,6 +163,7 @@ public class Player : MonoBehaviour
         if(isJumping && jumptime < threshold)
         {
             rb.velocity = new Vector2(rb.velocity.x, JumpSpeed);
+           
         }
 
     }
