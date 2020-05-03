@@ -7,47 +7,15 @@ using UnityEngine.SceneManagement;
 public class GameManager : MonoBehaviour
 {
     public int level = 0;
-    [SerializeField]
-    GameObject[] switches;
 
     [SerializeField]
     GameObject exitDoor;
-
-    int numOfSwitches = 0;
-
-    [SerializeField]
-    Text switchCount;
 
     private void Awake()
     {
         level = PlayerPrefs.GetInt("level");
     }
 
-    void Start()
-    {
-        GetNumOfSwitches();
-    }
-
-    public int GetNumOfSwitches()
-    {
-        int x = 0;
-
-        for (int i = 0; i < switches.Length; i++)
-        {
-            if (switches[i].GetComponent<Interaction>().IsOn == false)
-            {
-                x++;
-            }
-            else if (switches[i].GetComponent<Interaction>().IsOn == true)
-            {
-                numOfSwitches--;
-            }
-        }
-
-        numOfSwitches = x;
-
-        return numOfSwitches;
-    }
 
     public void nextLevel()
     {
@@ -80,18 +48,5 @@ public class GameManager : MonoBehaviour
         }
     }
 
-    public void GetDoorState()
-    {
-        if(numOfSwitches <= 0)
-        {
-            exitDoor.GetComponent<Interaction>().Open();
-        }
-    }
-
-    void Update()
-    {
-        switchCount.text = GetNumOfSwitches().ToString();
-
-        GetDoorState();
-    }
+  
 }

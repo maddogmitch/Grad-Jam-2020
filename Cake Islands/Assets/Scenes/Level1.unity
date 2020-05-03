@@ -4405,10 +4405,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   level: 0
-  switches:
-  - {fileID: 0}
   exitDoor: {fileID: 0}
-  switchCount: {fileID: 0}
 --- !u!4 &443411235
 Transform:
   m_ObjectHideFlags: 0
@@ -9018,6 +9015,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: Lever01
+      objectReference: {fileID: 0}
+    - target: {fileID: 2955116710625640592, guid: a8390ccb27b5aa445be2d34f23b1843a,
+        type: 3}
+      propertyPath: m_TagString
+      value: lever
       objectReference: {fileID: 0}
     - target: {fileID: 352893152350051865, guid: a8390ccb27b5aa445be2d34f23b1843a,
         type: 3}

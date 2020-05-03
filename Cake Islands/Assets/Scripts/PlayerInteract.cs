@@ -7,6 +7,8 @@ public class PlayerInteract : MonoBehaviour
     public GameObject currentInterObj = null;
     public Interaction currentInterObjScript = null;
     public Inventory inventory;
+    public GameObject lever;
+    public GameObject platform;
 
     // Update is called once per frame
     void Update()
@@ -47,8 +49,13 @@ public class PlayerInteract : MonoBehaviour
                 }
             }
         }
-    }
 
+        if (Input.GetButtonDown("Interact") && lever.CompareTag("lever"))
+        {
+            transform.Rotate(0, 0, -45);
+            platform.transform.Rotate(0, 0, -45);
+        }
+    }
 
     private void OnTriggerEnter2D(Collider2D other)
     {

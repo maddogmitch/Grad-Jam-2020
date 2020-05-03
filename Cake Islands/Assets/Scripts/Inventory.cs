@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class Inventory : MonoBehaviour
 {
-    public GameObject[] inventory = new GameObject[5];
+    public GameObject[] inventory = new GameObject[3];
 
     public void AddItem(GameObject item)
     {
