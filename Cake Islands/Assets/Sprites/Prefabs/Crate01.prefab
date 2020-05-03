@@ -10,6 +10,7 @@ GameObject:
   m_Component:
   - component: {fileID: 3766563240177993646}
   - component: {fileID: 7764944822516007337}
+  - component: {fileID: 2284011131771066073}
   m_Layer: 0
   m_Name: Crate01
   m_TagString: Untagged
@@ -79,3 +80,17 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!114 &2284011131771066073
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8359169150811818205}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: cf3ce2a99ca5f1e48a95118442cdbda6, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  cake: {fileID: 8359169150811818205}
+  gm: {fileID: 0}
