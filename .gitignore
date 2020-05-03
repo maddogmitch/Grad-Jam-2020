@@ -54,3 +54,5 @@ Cake Islands/Library/assetDatabase3
 *.json
 *.log
 Cake Islands/Library/assetDatabase3
+*.sln
+*.meta
