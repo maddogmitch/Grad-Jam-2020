@@ -14,7 +14,7 @@ GameObject:
   - component: {fileID: 6411533430616403975}
   m_Layer: 0
   m_Name: Lever
-  m_TagString: Untagged
+  m_TagString: platform
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -115,12 +115,5 @@ MonoBehaviour:
   inventory: 0
   openable: 0
   locked: 0
-  IsOn: 0
-  key: {fileID: 0}
-  SwitchON: {fileID: 0}
-  SwitchOFF: {fileID: 0}
-  box1: {fileID: 0}
-  box2: {fileID: 0}
-  space1: {fileID: 0}
-  space2: {fileID: 0}
-  anim: {fileID: 0}
+  key: {fileID: 327753355105841224, guid: fcdf9dccb76c5d54fa91c2db4fe304d7, type: 3}
+  anim: {fileID: 6257089661337313620}
