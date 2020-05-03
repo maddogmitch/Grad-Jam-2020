@@ -101,6 +101,12 @@ public class Player : MonoBehaviour
         {
             input.y = 0f;
         }
+
+        //plays Jump sound
+        if(isJumping)
+        {
+            FindObjectOfType<AudioManager>().Play("Jump");
+        }
     }
 
     
