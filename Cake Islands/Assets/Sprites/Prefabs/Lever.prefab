@@ -10,6 +10,8 @@ GameObject:
   m_Component:
   - component: {fileID: 352893152350051865}
   - component: {fileID: 8158046482375149499}
+  - component: {fileID: 6257089661337313620}
+  - component: {fileID: 6411533430616403975}
   m_Layer: 0
   m_Name: Lever
   m_TagString: Untagged
@@ -79,3 +81,46 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!95 &6257089661337313620
+Animator:
+  serializedVersion: 3
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2955116710625640592}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 0}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorControllerStateOnDisable: 0
+--- !u!114 &6411533430616403975
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2955116710625640592}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4a96b5218dcc943428e6bf16ad0f1a1d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  inventory: 0
+  openable: 0
+  locked: 0
+  IsOn: 0
+  key: {fileID: 0}
+  SwitchON: {fileID: 0}
+  SwitchOFF: {fileID: 0}
+  box1: {fileID: 0}
+  box2: {fileID: 0}
+  space1: {fileID: 0}
+  space2: {fileID: 0}
+  anim: {fileID: 0}
