@@ -114,17 +114,17 @@ public class Player : MonoBehaviour
 
     private void OnTriggerEnter2D(Collider2D other)
     {
-        isAlive = true;
-        if (isAlive == true)
-        {
+        
             if (other.CompareTag("spikes"))
             {
                 heart3.SetActive(false);
-                isAlive = true;
+                anim.SetBool("isdead", true);
+                rb.AddForce(new Vector2(0, 300));
+                //isAlive = true;
                 transform.position = StartPosition.transform.position;
                 
             }
-        }
+        
     }
 
 
