@@ -733,7 +733,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &68349524
 Transform:
   m_ObjectHideFlags: 0
@@ -2064,6 +2064,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 166017968}
+  - component: {fileID: 166017969}
   m_Layer: 0
   m_Name: Box2
   m_TagString: interactable
@@ -3305,9 +3306,11 @@ GameObject:
   m_Component:
   - component: {fileID: 311667891}
   - component: {fileID: 311667892}
+  - component: {fileID: 311667894}
+  - component: {fileID: 311667895}
   m_Layer: 0
   m_Name: Door(Key)
-  m_TagString: Untagged
+  m_TagString: interactable
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -3319,8 +3322,8 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 311667890}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalRotation: {x: 0.0032393162, y: 0.0065509826, z: -0.00002122127, w: 0.9999733}
+  m_LocalPosition: {x: -0.53, y: -0.854, z: 0.014}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
@@ -3342,7 +3345,7 @@ MonoBehaviour:
   openable: 1
   locked: 1
   IsOn: 0
-  key: {fileID: 0}
+  key: {fileID: 795588785}
   SwitchON: {fileID: 0}
   SwitchOFF: {fileID: 0}
   box1: {fileID: 0}
@@ -4979,6 +4982,7 @@ GameObject:
   - component: {fileID: 519420032}
   - component: {fileID: 519420031}
   - component: {fileID: 519420029}
+  - component: {fileID: 519420030}
   m_Layer: 0
   m_Name: Main Camera
   m_TagString: MainCamera
@@ -4994,6 +4998,24 @@ AudioListener:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 519420028}
   m_Enabled: 1
+--- !u!114 &519420030
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 519420028}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: dd9e3b8b67a4b9f43ba3fe456895b306, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  camTarget: {fileID: 886359975}
+  trackingSpeed: 2
+  minX: -100
+  minY: -100
+  maxX: 100
+  maxY: 100
 --- !u!20 &519420031
 Camera:
   m_ObjectHideFlags: 0
@@ -6878,6 +6900,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 655254370}
+  - component: {fileID: 655254371}
   m_Layer: 0
   m_Name: Box1
   m_TagString: interactable
@@ -7844,6 +7867,8 @@ GameObject:
   m_Component:
   - component: {fileID: 795588787}
   - component: {fileID: 795588786}
+  - component: {fileID: 795588788}
+  - component: {fileID: 795588789}
   m_Layer: 0
   m_Name: Key
   m_TagString: interactable
@@ -7861,7 +7886,7 @@ CircleCollider2D:
   m_Enabled: 1
   m_Density: 1
   m_Material: {fileID: 0}
-  m_IsTrigger: 0
+  m_IsTrigger: 1
   m_UsedByEffector: 0
   m_UsedByComposite: 0
   m_Offset: {x: 0, y: 0}
@@ -7875,7 +7900,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 795588785}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalPosition: {x: 0.939, y: 0.594, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}

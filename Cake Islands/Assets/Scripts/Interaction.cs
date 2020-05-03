@@ -26,10 +26,10 @@ public class Interaction : MonoBehaviour
     void DoInteraction()
     {
         //Picked up and put in inventory
-        if (key && box1 && box2)
-        {
-            gameObject.SetActive(false);
-        }
+        
+        
+         gameObject.SetActive(false);
+        
     }
 
     public void Open()
