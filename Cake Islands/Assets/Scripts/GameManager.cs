@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 using UnityEngine.SceneManagement;
+
 public class GameManager : MonoBehaviour
 {
     public int level = 0;
@@ -16,6 +17,11 @@ public class GameManager : MonoBehaviour
 
     [SerializeField]
     Text switchCount;
+
+    private void Awake()
+    {
+        level = PlayerPrefs.GetInt("level");
+    }
 
     void Start()
     {
@@ -46,11 +52,13 @@ public class GameManager : MonoBehaviour
     public void nextLevel()
     {
         level++;
+        PlayerPrefs.SetInt("level", level);
+        PlayerPrefs.Save();
         if (level == 1)
         {
             SceneManager.LoadScene("Level1");
         }
-        else if(level ==2)
+        else if(level == 2)
         {
             SceneManager.LoadScene("Level2");
         }
