@@ -21,10 +21,12 @@ public class leverplatform : MonoBehaviour
     {
         if(isOpen == true)
         {
+            isOpen = false;
             anim.SetBool("isopen", true);
         }
         else
         {
+            isOpen = true;
             anim.SetBool("isopen", false);
         }
     }
