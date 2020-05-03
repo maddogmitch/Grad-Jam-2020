@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class Player : MonoBehaviour
 {
@@ -13,6 +14,11 @@ public class Player : MonoBehaviour
     public float threshold = 0.1f;
     public float jumptime;
     public float jump;
+    public bool isAlive;
+    public GameObject heart1;
+    public GameObject heart2;
+    public GameObject heart3;
+    public GameObject StartPosition;
 
     //private variables
     private Vector2 input;
@@ -105,9 +111,16 @@ public class Player : MonoBehaviour
 
     private void OnTriggerEnter2D(Collider2D other)
     {
-        if (other.CompareTag("spikes"))
+        isAlive = true;
+        if (isAlive == true)
         {
-           
+            if (other.CompareTag("spikes"))
+            {
+                heart3.SetActive(false);
+                isAlive = true;
+                transform.position = StartPosition.transform.position;
+                
+            }
         }
     }
 

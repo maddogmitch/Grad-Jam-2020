@@ -8,6 +8,7 @@ TagManager:
   - button
   - GameManager
   - lever
+  - spikes
   layers:
   - Default
   - TransparentFX
