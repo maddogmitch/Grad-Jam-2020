@@ -169,7 +169,7 @@ MonoBehaviour:
   threshold: 0.1
   jumptime: 0
   jump: 100
-  isAlive: 1
+  isAlive: 0
   heart1: {fileID: 0}
   heart2: {fileID: 0}
   heart3: {fileID: 0}

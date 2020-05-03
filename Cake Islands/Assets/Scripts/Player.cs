@@ -120,6 +120,7 @@ public class Player : MonoBehaviour
             if (other.CompareTag("spikes"))
             {
                 heart3.SetActive(false);
+                anim.SetBool("isdead", true);
                 isAlive = true;
                 transform.position = StartPosition.transform.position;
                 
