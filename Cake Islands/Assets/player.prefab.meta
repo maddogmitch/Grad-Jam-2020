@@ -1,6 +1,12 @@
 fileFormatVersion: 2
+<<<<<<< HEAD:Cake Islands/Assets/player.prefab.meta
 guid: 0144d79d340fcd04c8512499974bb1e3
 PrefabImporter:
+=======
+guid: 04db621151816a044b99a5c855b18522
+folderAsset: yes
+DefaultImporter:
+>>>>>>> master:Cake Islands/Assets/Objects.meta
   externalObjects: {}
   userData: 
   assetBundleName: 
