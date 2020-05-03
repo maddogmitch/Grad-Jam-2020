@@ -12,6 +12,8 @@ public class UIManager : MonoBehaviour
     public GameObject SettingsPanel;
     public GameObject CreditsPanel;
     public GameObject StartPanel;
+    public GameObject StartButton;
+    public GameManager gm;
 
     void Awake()
     {
@@ -42,6 +44,12 @@ public class UIManager : MonoBehaviour
         SettingsPanel.SetActive(false);
         CreditsPanel.SetActive(false);
         StartPanel.SetActive(true);
+    }
+
+    public void StartGame()
+    {
+        gm.level = 0;
+        gm.nextLevel();
     }
 
     public void ExitGame()
