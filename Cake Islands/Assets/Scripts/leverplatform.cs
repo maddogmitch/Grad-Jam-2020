@@ -17,10 +17,12 @@ public class leverplatform : MonoBehaviour
     {
         
     }
+    //function to switch animation position
     public void switchPos()
     {
         if(isOpen == true)
         {
+            //set open to false so next time called it will,do the fase part of statment
             isOpen = false;
             anim.SetBool("isopen", true);
         }
