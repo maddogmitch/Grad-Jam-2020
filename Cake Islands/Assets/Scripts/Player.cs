@@ -4,6 +4,7 @@ using UnityEngine;
 
 public class Player : MonoBehaviour
 {
+
     //public variables
     public int lives;
     public float speed = 10f;
@@ -13,6 +14,7 @@ public class Player : MonoBehaviour
     public float threshold = 0.1f;
     public float jumptime;
     public float jump;
+
 
     //private variables
     private Vector2 input;
@@ -103,7 +105,7 @@ public class Player : MonoBehaviour
         }
 
         //plays Jump sound
-        if(isJumping)
+        if(isJumping == true)
         {
             FindObjectOfType<AudioManager>().Play("Jump");
         }
@@ -149,5 +151,4 @@ public class Player : MonoBehaviour
         }
 
     }
-    
 }
