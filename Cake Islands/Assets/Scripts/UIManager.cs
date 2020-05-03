@@ -48,6 +48,7 @@ public class UIManager : MonoBehaviour
 
     public void StartGame()
     {
+        gm.level = 0;
         gm.nextLevel();
     }
 
