@@ -2,9 +2,10 @@
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
-
+using UnityEngine.SceneManagement;
 public class GameManager : MonoBehaviour
 {
+    public int level = 0;
     [SerializeField]
     GameObject[] switches;
 
@@ -24,14 +25,14 @@ public class GameManager : MonoBehaviour
     public int GetNumOfSwitches()
     {
         int x = 0;
-        
-        for(int i =0; i < switches.Length; i++)
+
+        for (int i = 0; i < switches.Length; i++)
         {
-            if(switches[i].GetComponent<Interaction>().IsOn == false)
+            if (switches[i].GetComponent<Interaction>().IsOn == false)
             {
                 x++;
             }
-            else if(switches[i].GetComponent<Interaction>().IsOn == true)
+            else if (switches[i].GetComponent<Interaction>().IsOn == true)
             {
                 numOfSwitches--;
             }
@@ -40,6 +41,35 @@ public class GameManager : MonoBehaviour
         numOfSwitches = x;
 
         return numOfSwitches;
+    }
+
+    public void nextLevel()
+    {
+        level++;
+        if (level == 1)
+        {
+            SceneManager.LoadScene("Level1");
+        }
+        else if(level ==2)
+        {
+            SceneManager.LoadScene("Level2");
+        }
+        else if (level == 3)
+        {
+            SceneManager.LoadScene("Level3");
+        }
+        else if (level == 4)
+        {
+            SceneManager.LoadScene("Level4");
+        }
+        else if (level == 5)
+        {
+            SceneManager.LoadScene("Level5");
+        }
+        else
+        {
+            SceneManager.LoadScene("Menu");
+        }
     }
 
     public void GetDoorState()

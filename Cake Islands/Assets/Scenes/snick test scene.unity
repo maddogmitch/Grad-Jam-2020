@@ -356,7 +356,10 @@ MonoBehaviour:
   speed: 10
   acceleration: 3
   isJumping: 0
-  JumpSpeed: 5
+  JumpSpeed: 10
+  threshold: 0.25
+  jumptime: 0
+  jump: 5
 --- !u!95 &1231937201
 Animator:
   serializedVersion: 3
