@@ -80,13 +80,13 @@ public class Player : MonoBehaviour
         if(input.y >= 1f)
         {
             jumptime += Time.deltaTime;
-           // anim.SetBool("isjumping", true);
+           anim.SetBool("isjumping", true);
         }
-        else if(input.y <=0)
+        else
         {      
             isJumping = false;
             jumptime = 0;
-            //anim.SetBool("isjumping", false);
+            anim.SetBool("isjumping", false);
         }
 
         //checks if you can jump if you can you will be now at a state of jumping if the input y is more then 0 
