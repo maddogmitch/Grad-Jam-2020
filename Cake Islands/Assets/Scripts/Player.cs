@@ -125,7 +125,9 @@ public class Player : MonoBehaviour
                 transform.position = StartPosition.transform.position;
                 
             }
+            
         }
+        anim.SetBool("isdead", false);
     }
 
 
